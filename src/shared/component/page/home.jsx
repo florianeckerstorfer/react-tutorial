@@ -40,7 +40,7 @@ const HomePage = ({ classes }: { classes: Object }) =>
     <div className="container">
       <div className="row">
         <div className="col-md-4 mb-4">
-          <h3 className="mb-3">Bootstrap</h3>
+          <h3 className="mb-3">Bootstrapped</h3>
           <p>
             <button
               type="button"
