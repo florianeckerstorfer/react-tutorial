@@ -3,9 +3,10 @@
 import { connect } from 'react-redux'
 
 import Message from '../component/message'
+import { getMessage } from '../../client/configureStore'
 
 const mapStateToProps = state => ({
-  message: state.hello.get('message'),
+  message: getMessage(state),
 })
 
 export default connect(mapStateToProps)(Message)

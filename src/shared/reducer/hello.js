@@ -31,3 +31,6 @@ const helloReducer = (state: Immut = initialState, action: { type: string, paylo
 }
 
 export default helloReducer
+
+export const getMessage = (state: Immut) => state.get('message')
+export const getMessageAsync = (state: Immut) => state.get('messageAsync')
