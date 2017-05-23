@@ -5,7 +5,7 @@ import {
   sayHelloAsyncFailure,
 } from '../action/hello'
 
-import helloReducer from './hello'
+import helloReducer, { getMessage, getMessageAsync } from './hello'
 
 let helloState
 
@@ -36,4 +36,14 @@ test('handle SAY_HELLO_ASYNC_SUCCESS', () => {
 test('handle SAY_HELLO_ASYNC_FAILURE', () => {
   helloState = helloReducer(helloState, sayHelloAsyncFailure())
   expect(helloState.get('messageAsync')).toBe('No message received, please check your connection')
+})
+
+test('getMessage returns message from hello state', () => {
+  const message = getMessage(helloState)
+  expect(message).toBe('Initial reducer message')
+})
+
+test('getMessageAsync returns messageAsync from hello state', () => {
+  const message = getMessageAsync(helloState)
+  expect(message).toBe('Initial reducer message for async call')
 })
